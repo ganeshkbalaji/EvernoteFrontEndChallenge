@@ -1,0 +1,39 @@
+  button.btn-success {
+    background-color: #006400;
+    font-size: 20px;
+    font-family: webfont, Georgia, Times, "Times New Roman", serif;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 50%;
+    padding: 5px 40px 5px 40px;
+  }
+  .tee-item{
+    float: right;
+  }
+ /* button.btn-success {
+    float: right;
+  }*/
+  .tee-items{
+    float: left;
+  }
+  span.tee {
+    color: grey;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-family: webfont, Georgia, Times, "Times New Roman", serif;
+  }
+  hr{
+   background: black;
+   height: 2px;
+ }
+ ul {
+  margin:10px 0 0 2%;
+  display: inline-block;
+}
+li{
+  box-decoration-break: none;
+  display: inline;
+  direction: horizontal;
+  position: relative;
+}
+

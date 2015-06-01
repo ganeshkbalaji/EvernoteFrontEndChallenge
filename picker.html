@@ -1,0 +1,69 @@
+<html>
+<head>
+  <title>Picker</title>
+  <!--this is a sample version of our "webfont" that you can use for headers. -->
+  <link rel="stylesheet" href="http://evernote.com/media/css/fonts_english_only.css" type="text/css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- CSS stylesheet link -->
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <!-- Handlebars  -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
+  <!-- Handlebars-Internationalization -->
+  <script src="handlebars-intl/dist/handlebars-intl.min.js"></script>
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!-- JavaScript file -->
+  <script src="picker.js"></script>
+  <style>
+  body {
+    font-family: webfont, Georgia, Times, "Times New Roman", serif; color: #006400;
+  }
+  </style>
+</head>
+<body data-init="{ &quot;id&quot; : &quot;entee&quot;, &quot;variants&quot; : [{ &quot;id&quot; : &quot;forgetting&quot;, &quot;image&quot; : &quot;images/AP_Tee_Large_Forgetting.png&quot;, &quot;image_thumbnail&quot; : &quot;images/AP_Tee_Forgetting.png&quot;, &quot;price_cents&quot; : 2400, &quot;display_name&quot; : &quot;Forgetting Tee&quot;}, { &quot;id&quot; : &quot;logogray&quot;, &quot;image&quot; : &quot;images/AP_Tee_Large_Logo_Gray.png&quot;, &quot;image_thumbnail&quot; : &quot;images/AP_Tee_Logo_Gray.png&quot;, &quot;price_cents&quot; : 2400, &quot;display_name&quot; : &quot;Evernote Logo Tee&quot;}, { &quot;id&quot; : &quot;rorschach&quot;, &quot;image&quot; : &quot;images/AP_Tee_Large_Rorschach.png&quot;, &quot;image_thumbnail&quot; : &quot;images/AP_Tee_Rorschach.png&quot;,&quot;price_cents&quot; : 2400, &quot;display_name&quot; :&quot;Rorschach Tee&quot;}, { &quot;id&quot; : &quot;logogreen&quot;, &quot;image&quot; : &quot;images/AP_Tee_Large_Logo_Green.png&quot;, &quot;image_thumbnail&quot; : &quot;images/AP_Tee_Logo_Green.png&quot;, &quot;price_cents&quot; : 2400, &quot;display_name&quot; : &quot;Evernote Logo Tee&quot;}]}">
+  <header>
+    <div class="container-fluid">
+      <h1>Evernote Tees</h1>
+    </div>
+  </header>
+  <section id="tee-options">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-6 tee-item">
+          <div id="full">
+            <img src="images/AP_Tee_Large_Forgetting.png">
+          </div>
+          <div id="tees">
+          <script id="tee_template" type="x-handlebars-template">
+          <div id="price">$24.00</div>
+          <div id="display_name">Forgetting Tee</div>
+          <form class="tee-variant" action="/buy" method="post" id="item_id">
+          <button type="submit" class="btn btn-success">Buy</button>
+          </form>
+          </script>
+          </div>
+        </div>
+        <div class="col-sm-6 tee-items">
+          <span class="tee">Select a Tee</span>
+          <hr>
+          <div id="tee-thumbnail">
+            <script id="tees_template" type="x-handlebars-template">
+            {{#each tees}}
+            <ul>
+            <li><img tee_id="{{id}}" display_name="{{display_name}}" image="{{image}}" price="{{price_cents}}" class="image-thumbnail "src="{{image_thumbnail}}"></li>
+            </ul>
+            {{/each}}
+            </script>
+            <img src="" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

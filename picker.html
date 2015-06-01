@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Picker</title>
@@ -11,8 +12,6 @@
   <link rel="stylesheet" href="style.css" type="text/css" />
   <!-- Handlebars  -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.js"></script>
-  <!-- Handlebars-Internationalization -->
-  <script src="handlebars-intl/dist/handlebars-intl.min.js"></script>
   <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <!-- Latest compiled JavaScript -->
@@ -39,13 +38,17 @@
             <img src="images/AP_Tee_Large_Forgetting.png">
           </div>
           <div id="tees">
-          <script id="tee_template" type="x-handlebars-template">
-          <div id="price">$24.00</div>
-          <div id="display_name">Forgetting Tee</div>
-          <form class="tee-variant" action="/buy" method="post" id="item_id">
-          <button type="submit" class="btn btn-success">Buy</button>
-          </form>
-          </script>
+            <script id="tee_template" type="x-handlebars-template">
+            <div class="contents">
+              <div class="description">
+                <div id="price">$24.00</div>
+                <div id="display_name">Forgetting Tee</div>
+              </div>
+              <form class="tee-variant" action="/buy" method="post" id="item_id">
+                <button type="submit" class="btn btn-success">Buy</button>
+              </form>
+            </div>
+            </script>
           </div>
         </div>
         <div class="col-sm-6 tee-items">
@@ -55,14 +58,15 @@
             <script id="tees_template" type="x-handlebars-template">
             {{#each tees}}
             <ul>
-            <li><img tee_id="{{id}}" display_name="{{display_name}}" image="{{image}}" price="{{price_cents}}" class="image-thumbnail "src="{{image_thumbnail}}"></li>
+            <div class="tee-thumbnails">
+            <li><img tee_id="{{id}}" display_name="{{display_name}}" image="{{image}}" price="{{price_cents}}" class="image-thumbnail "src="{{image_thumbnail}}">
+            </li>
+            </div>
             </ul>
             {{/each}}
             </script>
-            <img src="" alt="">
           </div>
         </div>
-      </div>
     </div>
   </section>
 </body>

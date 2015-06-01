@@ -10,15 +10,17 @@ $(document).on('ready', function() {
 
   $('body').on('click', '.image-thumbnail', function(event) {
     event.preventDefault();
-    var price = $(this).attr('price');
+  var price = $(this).attr('price');
   // debugger;
   var displayName = $(this).attr('display_name');
   var fullImage = $(this).attr('image');
   var teeId = $(this).attr('tee_id');
-  $('#price').html('$' + (Number(price)/100).toFixed(2))
-  $('#display_name').html(displayName)
-  $('#full img').attr('src', fullImage)
-  $('#full form').attr('id', teeId)
+  $('#price').html('$' + (Number(price)/100).toFixed(2));
+  $('#display_name').html(displayName);
+  $('#full img').attr('src', fullImage);
+  $('#full form').attr('id', teeId);
+  $('img').removeClass("round-border");
+  $(this).addClass("round-border");
 });
 });
 
